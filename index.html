@@ -17,13 +17,17 @@
     h1{font-size:clamp(28px,5vw,40px);margin:0 0 4px 0;font-weight:800;}
     .tagline{color:var(--brand);margin:0 0 24px 0;font-weight:600}
     p{color:var(--muted);line-height:1.7;margin:0 0 14px}
-    h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--link);margin:26px 0 10px}
+    h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#0ea5e9;margin:26px 0 10px}
     ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
     .cta{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
     .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none}
     .btn.primary{background:var(--brand);color:#fff}
-    .btn.ghost{border:1px solid #cbd5e1;color:var(--ink)}
+    .btn.ghost{border:1px solid #cbd5e1;color:var(--ink);background:#fff}
     footer{border-top:1px solid #e5e7eb;margin-top:32px;padding-top:14px;color:#64748b;font-size:14px}
+    .links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:10px}
+    .linkcard{border:1px solid #e5e7eb;border-radius:12px;padding:12px 14px;background:#fff}
+    .linkcard a{color:var(--ink);text-decoration:none;font-weight:600}
+    .linkcard a:hover{color:#0ea5e9;text-decoration:underline}
     @media (max-width:640px){header{flex-direction:column;align-items:flex-start}.avatar{width:72px;height:72px}}
   </style>
 </head>
@@ -50,17 +54,27 @@
       </ul>
 
       <div class="cta">
-        <a class="btn primary" href="https://github.com/Carlospm94?tab=repositories">Ver código en GitHub</a>
-        <a class="btn ghost" href="mailto:tu-email@ejemplo.com">Contactar</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/tu-perfil/">LinkedIn</a>
+        <a class="btn primary" href="https://github.com/Carlospm94?tab=repositories" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a>
+        <a class="btn ghost" href="mailto:carlospadillamoran5@gmail.com">Email</a>
+        <a class="btn ghost" href="tel:+526621883005">Llamar</a>
+      </div>
+
+      <h2>Presencia académica</h2>
+      <div class="links-grid">
+        <div class="linkcard">
+          <a href="https://www.researchgate.net/profile/Carlos-Padilla-Moran" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+          <p style="margin:.4rem 0 0;color:#64748b;">Perfil y publicaciones</p>
+        </div>
+        <div class="linkcard">
+          <a href="https://independent.academia.edu/CarlosPadill" target="_blank" rel="noopener noreferrer">Academia.edu</a>
+          <p style="margin:.4rem 0 0;color:#64748b;">Trabajos y reseñas</p>
+        </div>
+        <div class="linkcard">
+          <a href="https://scholar.google.com/citations?user=-rOjdCcAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          <p style="margin:.4rem 0 0;color:#64748b;">Citas y métricas</p>
+        </div>
       </div>
     </section>
 
     <footer>
-      © 2025 Carlos Padilla Morán · Hecho con HTML y CSS simples en GitHub Pages
-    </footer>
-  </main>
-</body>
-</html>
-
-
+      © 2025 Carlos Padilla Morán · Hecho con HTML y CSS simpl
