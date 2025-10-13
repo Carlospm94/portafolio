@@ -9,25 +9,41 @@
   <style>
     :root{
       --ink:#0f172a; --muted:#334155; --brand:#0f766e; --link:#0ea5e9; --ring:#e2e8f0;
+      --rg:#00CCBB; --aca:#1f2937; --sch:#4285F4; --wa:#25D366;
     }
     body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;}
     .wrap{max-width:900px;margin:0 auto;padding:40px 24px;}
-    header{display:flex;gap:18px;align-items:center;margin-bottom:10px;}
+    header{display:flex;gap:18px;align-items:center;margin-bottom:8px;}
     .avatar{width:84px;height:84px;border-radius:999px;object-fit:cover;border:4px solid var(--ring);}
     h1{font-size:clamp(28px,5vw,40px);margin:0 0 4px 0;font-weight:800;}
-    .tagline{color:var(--brand);margin:0 0 24px 0;font-weight:600}
+    .tagline{color:var(--brand);margin:0 0 10px 0;font-weight:600}
     p{color:var(--muted);line-height:1.7;margin:0 0 14px}
     h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#0ea5e9;margin:26px 0 10px}
     ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
-    .cta{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+    .cta{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
     .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none}
     .btn.primary{background:var(--brand);color:#fff}
     .btn.ghost{border:1px solid #cbd5e1;color:var(--ink);background:#fff}
-    footer{border-top:1px solid #e5e7eb;margin-top:32px;padding-top:14px;color:#64748b;font-size:14px}
+
+    /* Icon bar */
+    .icons{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 22px}
+    .iconbtn{width:42px;height:42px;border-radius:999px;border:1px solid #e5e7eb;background:#fff;
+             display:inline-flex;align-items:center;justify-content:center;transition:.15s ease; }
+    .iconbtn:hover{transform:translateY(-1px);border-color:#cbd5e1;box-shadow:0 6px 14px rgba(15,23,42,.06)}
+    .iconbtn svg{width:22px;height:22px}
+    .iconbtn.rg svg{fill:var(--rg)}
+    .iconbtn.aca svg{fill:var(--aca)}
+    .iconbtn.sch svg{fill:var(--sch)}
+    .iconbtn.wa{border-color:color-mix(in srgb, var(--wa) 40%, #e5e7eb)}
+    .iconbtn.wa svg{fill:var(--wa)}
+
+    /* Link cards */
     .links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:10px}
     .linkcard{border:1px solid #e5e7eb;border-radius:12px;padding:12px 14px;background:#fff}
     .linkcard a{color:var(--ink);text-decoration:none;font-weight:600}
     .linkcard a:hover{color:#0ea5e9;text-decoration:underline}
+
+    footer{border-top:1px solid #e5e7eb;margin-top:32px;padding-top:14px;color:#64748b;font-size:14px}
     @media (max-width:640px){header{flex-direction:column;align-items:flex-start}.avatar{width:72px;height:72px}}
   </style>
 </head>
@@ -39,6 +55,30 @@
       <div>
         <h1>Carlos Padilla Morán</h1>
         <p class="tagline">Portafolio y CV</p>
+
+        <!-- Barra de iconos -->
+        <div class="icons">
+          <!-- ResearchGate -->
+          <a class="iconbtn rg" aria-label="ResearchGate"
+             href="https://www.researchgate.net/profile/Carlos-Padilla-Moran" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M14.88 13.74c1.46.22 2.6 1.5 2.6 3.2 0 1.97-1.55 3.58-3.6 3.58H8.1V3.48h6.7c1.98 0 3.5 1.48 3.5 3.4 0 1.7-1.06 3.02-2.58 3.27v.05c1.2.3 2.13 1.32 2.13 2.85 0 1.5-.9 2.53-2 2.69v0ZM10.6 5.1v4.4h3.7c1.1 0 1.88-.77 1.88-2.2 0-1.34-.8-2.2-1.98-2.2h-3.6Zm0 6v7.3h3.4c1.24 0 2.18-.96 2.18-2.25 0-1.34-.97-2.27-2.24-2.27H12.8l-.96-2.78h-1.2Z"/></svg>
+          </a>
+          <!-- Academia.edu -->
+          <a class="iconbtn aca" aria-label="Academia.edu"
+             href="https://independent.academia.edu/CarlosPadill" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 3 3 20h3.5l1.9-4H15.6l1.9 4H21L12 3Zm-1.1 9.6 2.1-4.4 2.2 4.4h-4.3Z"/></svg>
+          </a>
+          <!-- Google Scholar -->
+          <a class="iconbtn sch" aria-label="Google Scholar"
+             href="https://scholar.google.com/citations?user=-rOjdCcAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 3 3 10.5 12 18l9-7.5L12 3Zm0 3.2 5 4.3-5 4.2-5-4.2 5-4.3Zm0 12.3c-3 0-5.5.7-5.5 1.6S9 22.7 12 22.7s5.5-.7 5.5-1.6-2.5-1.6-5.5-1.6Z"/></svg>
+          </a>
+          <!-- WhatsApp -->
+          <a class="iconbtn wa" aria-label="WhatsApp"
+             href="https://wa.me/526621883005?text=Hola%20Carlos,%20vi%20tu%20portafolio" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 2 14.6L1 23l8.6-1.9a11 11 0 0 0 16-9.6c0-3-1.2-5.7-3.1-7.6ZM9.6 19.2l-.5.1-4.9 1.1 1-4.7.1-.5a8.8 8.8 0 1 1 4.3 4ZM7.9 7.7c-.2-.4-.4-.3-.6-.3h-.5c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3s2 3.2 4.9 4.4c2.4 1 2.9.9 3.4.8s1.7-.7 1.9-1.4c.2-.7.2-1.3.1-1.4-.1-.1-.2-.2-.5-.3l-1.9-.9c-.2-.1-.4-.1-.6.1l-.9 1c-.1.1-.3.2-.5.1-.2-.1-1.1-.4-2.1-1.3-1-.9-1.4-2-1.5-2.2-.2-.2 0-.3.1-.4l.4-.5c.1-.1.1-.3 0-.5L7.9 7.7Z"/></svg>
+          </a>
+        </div>
       </div>
     </header>
 
@@ -77,4 +117,11 @@
     </section>
 
     <footer>
-      © 2025 Carlos Padilla Morán · Hecho con HTML y CSS simpl
+      © 2025 Carlos Padilla Morán · Hecho con HTML/CSS simples en GitHub Pages ·
+      <a href="mailto:carlospadillamoran5@gmail.com">carlospadillamoran5@gmail.com</a> ·
+      <a href="tel:+526621883005">(+52) 662 188 3005</a>
+    </footer>
+  </main>
+</body>
+</html>
+
